@@ -48,8 +48,8 @@ demo.sitemap:
 sitemap demo label="Main Menu"
 {
     Frame {
-        Text item=Fluid_Level
-        Text item=Fluid_Quantity
+        Text item=Cistern_Fluid_Level
+        Text item=Cistern_Fluid_Quantity
     }
 }
 ```

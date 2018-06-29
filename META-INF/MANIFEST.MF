@@ -1,5 +1,10 @@
 Manifest-Version: 1.0
-Bundle-ActivationPolicy: lazy
+Bundle-ManifestVersion: 2
+Bundle-Name: OpenCisterna Binding
+Bundle-SymbolicName: org.eclipse.smarthome.binding.opencisterna;singleton:=true
+Bundle-Vendor: Eclipse.org/SmartHome
+Bundle-Version: 0.10.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ClassPath: .,
  lib/unirest-java-1.4.9.jar,
  lib/httpasyncclient-4.0.2.jar,
@@ -10,12 +15,7 @@ Bundle-ClassPath: .,
  lib/httpcore-nio-4.3.3.jar,
  lib/commons-codec-1.6.jar,
  lib/commons-logging-1.1.3.jar
-Bundle-ManifestVersion: 2
-Bundle-Name: OpenCisterna Binding
-Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Bundle-SymbolicName: org.eclipse.smarthome.binding.opencisterna;singleton:=true
-Bundle-Vendor: Eclipse.org/SmartHome
-Bundle-Version: 0.1.0.qualifier
+Bundle-ActivationPolicy: lazy
 Import-Package: 
  com.fasterxml.jackson.core;version="2.4.5",
  com.fasterxml.jackson.databind;version="2.4.5",
@@ -31,3 +31,4 @@ Import-Package:
  org.eclipse.smarthome.core.util,
  org.slf4j
 Service-Component: OSGI-INF/*.xml
+Automatic-Module-Name: org.eclipse.smarthome.binding.opencisterna
