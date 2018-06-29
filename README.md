@@ -37,8 +37,8 @@ opencisterna:cistern:default [ baseUrl="http://opencisterna:80", refresh=15 ]
 demo.items:
 
 ```
-Number Cistern_Fluid_Level      "Cistern Fluid Level [JS(topct.js):%d %%]"  { channel="opencisterna:cistern:default:fluidLevel" }
-Number Cistern_Fluid_Quantity   "Cistern Fluid Quantity [%.3f m³]"          { channel="opencisterna:cistern:default:fluidQuantity" }
+Number Cistern_Fluid_Level      "Cistern Fluid Level [%.2f %%]"         { channel="opencisterna:cistern:default:fluidLevel" }
+Number Cistern_Fluid_Quantity   "Cistern Fluid Quantity [%.3f m³]"      { channel="opencisterna:cistern:default:fluidQuantity" }
 
 ```
 
