@@ -9,14 +9,18 @@
 		<label>Cistern Fluid Level Sensor</label>
 		<description>Provides fluid level information in a cistern.</description>
 		<channels>
-			<channel id="level" typeId="fluidLevel" />
-			<channel id="quantity" typeId="fluidQuantity" />
+			<channel id="fluidLevel" typeId="fluidLevel" />
+			<channel id="fluidQuantity" typeId="fluidQuantity" />
 		</channels>
 		<config-description>
+		    <parameter name="baseUrl" type="text">
+                <label>Sensor Base URL</label>
+                <description>Specifies the base URL of the sensor.</description>
+            </parameter>
 			<parameter name="refresh" type="integer" min="1">
 				<label>Refresh interval</label>
 				<description>Specifies the refresh interval in seconds.</description>
-				<default>60</default>
+				<default>900</default>
 			</parameter>
 		</config-description>
 	</thing-type>
@@ -26,7 +30,7 @@
 		<item-type>Number:Dimensionsless</item-type>
 		<label>Fluid Level</label>
 		<description>Current Fluid Level in percent.</description>
-		<state min="0" max="100" step="1" readOnly="true" pattern="%.1f %%" />
+		<state min="0" max="1" step="0.01" readOnly="true" pattern="%.1f %%" />
 	</channel-type>
 	
 	<!--  Fluid quantity channel. -->
@@ -34,7 +38,7 @@
 		<item-type>Number:Dimensionsless</item-type>
 		<label>Fluid Quantity</label>
 		<description>Current Fluid Quantity in cubic meters.</description>
-		<state min="0" step="1" readOnly="true" pattern="%.1f m²" />
+		<state min="0" step="0.001" readOnly="true" pattern="%.1f m³" />
 	</channel-type>
 
 </thing:thing-descriptions>

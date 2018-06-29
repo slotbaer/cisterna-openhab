@@ -2,7 +2,7 @@
 
 **This is alpha software.**
 
-This binding uses an Open Cisterna sensor for providing fluid level information for a cistern.
+This binding uses an Open Cisterna sensor (see [Github repository](https://github.com/slotbaer/open-cisterna)) for providing fluid level information for a cistern.
 
 ## Supported Things
 
@@ -10,7 +10,12 @@ There is exactly one supported thing, which represents the Open Cisterna sensor.
 
 ## Thing Configuration
 
-There is only one supported configuration parameter called ```refresh``` which defines the refresh interval in seconds.
+There are the following configuration parameters 
+
+| Name    | Meaning                                  | Allows Values | Default Value |
+|---------|------------------------------------------|---------------|---------------|
+| refresh | The refresh interval in seconds          | > 0           | 900           |
+| baseUrl | The base URL of the Open Cisterna sensor | Any valid URL | N/A           |
 
 ## Channels
 
@@ -18,7 +23,7 @@ The information that is retrieved from the Open Cisterna sensor is available as 
 
 | Channel Type ID | Item Type            | Description                                         |
 |-----------------|----------------------|-----------------------------------------------------|
-| level           | Number:Dimensionless | The current fluid level in %.                       |
+| fluidLevel      | Number:Dimensionless | The current fluid level as a fraction of 1.         |
 | quantity        | Number:Dimensionless | The amount of fluid available in the cistern in m². |
 
 ## Full Example
@@ -26,14 +31,15 @@ The information that is retrieved from the Open Cisterna sensor is available as 
 demo.things:
 
 ```
-opencisterna:cistern:main [ refresh=300 ]
+opencisterna:cistern:default [ baseUrl="http://opencisterna:80", refresh=15 ]
 ```
 
 demo.items:
 
 ```
-Number Fluid_Level  "Fluid Level [%.1f]" { channel="opencisterna:cistern:main:level" }
-Number Fluid_Quantity  "Fluid Quantity [%.1f m²]" { channel="opencisterna:cistern:main:quantity" }
+Number Cistern_Fluid_Level      "Cistern Fluid Level [JS(topct.js):%d %%]"  { channel="opencisterna:cistern:default:fluidLevel" }
+Number Cistern_Fluid_Quantity   "Cistern Fluid Quantity [%.3f m³]"          { channel="opencisterna:cistern:default:fluidQuantity" }
+
 ```
 
 demo.sitemap:

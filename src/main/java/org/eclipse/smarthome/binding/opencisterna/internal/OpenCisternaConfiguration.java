@@ -22,6 +22,16 @@ public class OpenCisternaConfiguration {
     /**
      * Refresh interval in seconds.
      */
-    public String refresh;
+    public Integer refresh;
+
+    /**
+     * The base URL of the sensor.
+     */
+    public String baseUrl;
+
+    @Override
+    public String toString() {
+        return String.format("OpenCisternaConfiguration [refresh=%s, baseUrl=%s]", refresh, baseUrl);
+    }
 
 }

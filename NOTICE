@@ -17,3 +17,15 @@ https://github.com/slotbaer/open-cisterna-openhab
 See the NOTICE file distributed with the source code at
 https://github.com/slotbaer/open-cisterna-openhab/NOTICE
 for detailed information regarding copyright ownership.
+
+== 3rd Party Software
+
+Commons Codec (Apache-2.0)
+Commons Logging (Apache-2.0)
+HTTP Async Client (Apache-2.0)
+HTTP Client (Apache-2.0)
+HTTP Core (Apache-2.0)
+HTTP Core NIO (Apache-2.0)
+HTTP Mime (Apache-2.0)
+JSON (JSON)
+Unirest (MIT License)
